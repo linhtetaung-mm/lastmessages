@@ -22,12 +22,12 @@ export function Navigation() {
             {label}
           </Link>
         ))}
-        <Link
+        {/* <Link
           href="/login"
           className="text-[var(--accent)] transition hover:text-white"
         >
           terminal ↗
-        </Link>
+        </Link> */}
       </nav>
     </header>
   );

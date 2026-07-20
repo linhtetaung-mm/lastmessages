@@ -14,7 +14,7 @@ export default function Home() {
     <div>
       <section className="max-w-3xl py-10 sm:py-16">
         <p className="mb-5 font-mono text-xs uppercase tracking-[.2em] text-[var(--accent)]">
-          Hello, internet
+          Hello, stranger
         </p>
         <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-.055em] sm:text-7xl">
           I make useful things and leave notes about the process.
