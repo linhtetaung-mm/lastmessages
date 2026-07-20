@@ -1,2 +1,19 @@
 import Link from "next/link";
-export default function NotFound() { return <div className="py-20"><p className="font-mono text-xs uppercase tracking-[.2em] text-[var(--accent)]">404</p><h1 className="mt-4 text-5xl font-semibold tracking-[-.05em]">Nothing here.</h1><p className="mt-4 text-[var(--muted)]">This page may have moved, or it may never have existed.</p><Link href="/" className="mt-8 inline-block text-[var(--accent)]">Return home →</Link></div>; }
+export default function NotFound() {
+  return (
+    <div className="py-20">
+      <p className="font-mono text-xs uppercase tracking-[.2em] text-[var(--accent)]">
+        404
+      </p>
+      <h1 className="mt-4 text-5xl font-semibold tracking-[-.05em]">
+        Nothing here.
+      </h1>
+      <p className="mt-4 text-[var(--muted)]">
+        This page may have moved, or it may never have existed.
+      </p>
+      <Link href="/" className="mt-8 inline-block text-[var(--accent)]">
+        Return home →
+      </Link>
+    </div>
+  );
+}

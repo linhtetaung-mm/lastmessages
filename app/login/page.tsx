@@ -2,4 +2,106 @@
 import { useState } from "react";
 const PASSCODE = "4279"; // Replace this value when the production code is ready.
 type Attempt = { code: string; message: string; ok: boolean };
-export default function LoginPage() { const [code, setCode] = useState(""); const [attempts, setAttempts] = useState<Attempt[]>([]); const [shaking, setShaking] = useState(false); const granted = attempts.some((attempt) => attempt.ok); function submit(event: React.FormEvent) { event.preventDefault(); if (code.length !== 4 || granted) return; const ok = code === PASSCODE; setAttempts((all) => [{ code, message: ok ? "Access granted." : "Code rejected. Try again.", ok }, ...all]); setCode(""); if (!ok) { setShaking(true); window.setTimeout(() => setShaking(false), 580); } } return <div className="mx-auto max-w-xl"><p className="mb-3 font-mono text-xs uppercase tracking-[.2em] text-[var(--accent)]">Restricted area</p><h1 className="text-4xl font-semibold tracking-[-.045em] sm:text-5xl">Access Terminal</h1><p className="mt-4 leading-7 text-[var(--muted)]">Enter the four-digit crack code. This terminal remembers only while it is open.</p><section className={`mt-10 rounded-xl border p-6 font-mono ${granted ? "border-[var(--accent)] bg-[rgba(145,215,199,.08)]" : "border-[var(--line)] bg-black/10"} ${shaking ? "shake" : ""}`}><div className="mb-7 flex items-center justify-between text-xs"><span className="text-[var(--muted)]">SYS.ACCESS / v1.0</span><span className={granted ? "text-[var(--accent)]" : "text-amber-200"}>{granted ? "OPEN" : "LOCKED"}</span></div>{granted ? <div><p className="text-xl text-[var(--accent)]">ACCESS GRANTED</p><p className="mt-3 text-sm leading-6 text-[var(--muted)]">The terminal is open. There is nothing behind this door yet.</p></div> : <form onSubmit={submit}><label htmlFor="code" className="text-sm text-[var(--muted)]">CRACK_CODE [ four digits ]</label><div className="mt-3 flex gap-3"><input id="code" inputMode="numeric" autoComplete="off" pattern="[0-9]{4}" maxLength={4} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} className="min-w-0 flex-1 rounded-md border border-[var(--line)] bg-[#071a35] px-4 py-3 tracking-[.45em] outline-none transition focus:border-[var(--accent)]" aria-label="Four digit access code" /><button type="submit" disabled={code.length !== 4} className="rounded-md bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-[#0b2142] transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40">ENTER</button></div></form>}<div className="mt-8 border-t border-[var(--line)] pt-5"><p className="text-xs text-[var(--muted)]">ATTEMPT LOG</p>{attempts.length === 0 ? <p className="mt-3 text-sm text-[var(--muted)]">No attempts recorded.</p> : <ul className="mt-3 space-y-2 text-sm">{attempts.map((attempt, index) => <li key={`${attempt.code}-${index}`} className={attempt.ok ? "text-[var(--accent)]" : "text-rose-200"}>› {attempt.code} — {attempt.message}</li>)}</ul>}</div></section></div>; }
+export default function LoginPage() {
+  const [code, setCode] = useState("");
+  const [attempts, setAttempts] = useState<Attempt[]>([]);
+  const [shaking, setShaking] = useState(false);
+  const granted = attempts.some((attempt) => attempt.ok);
+  function submit(event: React.FormEvent) {
+    event.preventDefault();
+    if (code.length !== 4 || granted) return;
+    const ok = code === PASSCODE;
+    setAttempts((all) => [
+      {
+        code,
+        message: ok ? "Access granted." : "Code rejected. Try again.",
+        ok,
+      },
+      ...all,
+    ]);
+    setCode("");
+    if (!ok) {
+      setShaking(true);
+      window.setTimeout(() => setShaking(false), 580);
+    }
+  }
+  return (
+    <div className="mx-auto max-w-xl">
+      <p className="mb-3 font-mono text-xs uppercase tracking-[.2em] text-[var(--accent)]">
+        Restricted area
+      </p>
+      <h1 className="text-4xl font-semibold tracking-[-.045em] sm:text-5xl">
+        Access Terminal
+      </h1>
+      <p className="mt-4 leading-7 text-[var(--muted)]">
+        Enter the four-digit crack code. This terminal remembers only while it
+        is open.
+      </p>
+      <section
+        className={`mt-10 rounded-xl border p-6 font-mono ${granted ? "border-[var(--accent)] bg-[rgba(145,215,199,.08)]" : "border-[var(--line)] bg-black/10"} ${shaking ? "shake" : ""}`}
+      >
+        <div className="mb-7 flex items-center justify-between text-xs">
+          <span className="text-[var(--muted)]">SYS.ACCESS / v1.0</span>
+          <span className={granted ? "text-[var(--accent)]" : "text-amber-200"}>
+            {granted ? "OPEN" : "LOCKED"}
+          </span>
+        </div>
+        {granted ? (
+          <div>
+            <p className="text-xl text-[var(--accent)]">ACCESS GRANTED</p>
+            <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+              The terminal is open. There is nothing behind this door yet.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={submit}>
+            <label htmlFor="code" className="text-sm text-[var(--muted)]">
+              CRACK_CODE [ four digits ]
+            </label>
+            <div className="mt-3 flex gap-3">
+              <input
+                id="code"
+                inputMode="numeric"
+                autoComplete="off"
+                pattern="[0-9]{4}"
+                maxLength={4}
+                value={code}
+                onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
+                className="min-w-0 flex-1 rounded-md border border-[var(--line)] bg-[#071a35] px-4 py-3 tracking-[.45em] outline-none transition focus:border-[var(--accent)]"
+                aria-label="Four digit access code"
+              />
+              <button
+                type="submit"
+                disabled={code.length !== 4}
+                className="rounded-md bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-[#0b2142] transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                ENTER
+              </button>
+            </div>
+          </form>
+        )}
+        <div className="mt-8 border-t border-[var(--line)] pt-5">
+          <p className="text-xs text-[var(--muted)]">ATTEMPT LOG</p>
+          {attempts.length === 0 ? (
+            <p className="mt-3 text-sm text-[var(--muted)]">
+              No attempts recorded.
+            </p>
+          ) : (
+            <ul className="mt-3 space-y-2 text-sm">
+              {attempts.map((attempt, index) => (
+                <li
+                  key={`${attempt.code}-${index}`}
+                  className={
+                    attempt.ok ? "text-[var(--accent)]" : "text-rose-200"
+                  }
+                >
+                  › {attempt.code} — {attempt.message}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}

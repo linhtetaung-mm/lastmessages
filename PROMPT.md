@@ -2,25 +2,25 @@ Build a minimal, fast, content-first personal website using **Next.js (App Route
 
 ## Design
 
-* Overall aesthetic: minimal, elegant, developer-focused.
-* Background color for the entire site **must always be `rgb(11, 33, 66)`**.
-* Use a restrained color palette that complements the background.
-* Prefer whitespace, typography, and subtle motion over decorative elements.
-* Responsive by default.
-* Dark theme only.
-* Keep dependencies minimal.
+- Overall aesthetic: minimal, elegant, developer-focused.
+- Background color for the entire site **must always be `rgb(11, 33, 66)`**.
+- Use a restrained color palette that complements the background.
+- Prefer whitespace, typography, and subtle motion over decorative elements.
+- Responsive by default.
+- Dark theme only.
+- Keep dependencies minimal.
 
 ## Layout
 
 Persistent navigation with routes:
 
-* `/`
-* `/blog`
-* `/projects`
-* `/notes`
-* `/media`
-* `/puzzles`
-* `/login`
+- `/`
+- `/blog`
+- `/projects`
+- `/notes`
+- `/media`
+- `/puzzles`
+- `/login`
 
 Navigation should be simple and unobtrusive.
 
@@ -30,10 +30,10 @@ Navigation should be simple and unobtrusive.
 
 Landing page with:
 
-* Short introduction
-* Small profile section
-* Links to all sections
-* Featured/latest content if available
+- Short introduction
+- Small profile section
+- Links to all sections
+- Featured/latest content if available
 
 ### `/blog`
 
@@ -89,31 +89,31 @@ Generate a few placeholder entries so the site looks complete.
 
 ## Styling
 
-* Tailwind CSS
-* Clean typography
-* Rounded corners
-* Soft shadows
-* Minimal hover effects
-* Subtle transitions only
-* No heavy animations
+- Tailwind CSS
+- Clean typography
+- Rounded corners
+- Soft shadows
+- Minimal hover effects
+- Subtle transitions only
+- No heavy animations
 
 ## Code
 
-* TypeScript everywhere.
-* Prefer Server Components.
-* Use Client Components only where required (login puzzle, future puzzles).
-* Keep components small and reusable.
-* Avoid unnecessary libraries.
+- TypeScript everywhere.
+- Prefer Server Components.
+- Use Client Components only where required (login puzzle, future puzzles).
+- Keep components small and reusable.
+- Avoid unnecessary libraries.
 
 ## Extras
 
 Include:
 
-* favicon
-* sitemap
-* robots.txt
-* Open Graph metadata
-* 404 page
+- favicon
+- sitemap
+- robots.txt
+- Open Graph metadata
+- 404 page
 
 Do **not** add authentication, CMS, analytics, databases, or unnecessary features.
 
