@@ -17,7 +17,7 @@ export default function Home() {
           Hello, stranger
         </p>
         <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-.055em] sm:text-7xl">
-          I make useful things and leave notes about the process.
+          I make things and leave notes about the process.
         </h1>
         <p className="mt-7 max-w-xl text-lg leading-8 text-[var(--muted)]">
           A small corner for work, curiosities, and the occasional unfinished

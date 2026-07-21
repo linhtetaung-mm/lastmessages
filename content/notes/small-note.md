@@ -1,7 +1,7 @@
 ---
 title: A small note
-description: A small note for ending the day with a clearer desk and mind.
-date: 2026-06-03
+description: A small note for testing.
+date: 2026-07-21
 ---
 
-One list is for loose ends. The other is for the next physical action. Keeping them separate makes both lists less intimidating.
+So the web only accepts the mdx files and not the md notes. Got it.
