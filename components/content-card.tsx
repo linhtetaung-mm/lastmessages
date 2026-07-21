@@ -12,7 +12,7 @@ export function ContentCard({
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <Link
           href={`${basePath}/${item.slug}`}
-          className="text-lg font-medium tracking-tight transition group-hover:text-[var(--accent)]"
+          className="text-lg font-medium tracking-tight transition group-hover:!text-[var(--accent)]"
         >
           {item.title}
         </Link>

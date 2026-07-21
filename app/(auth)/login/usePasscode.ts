@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { attemptPasscode } from "@/app/login/actions";
+import { attemptPasscode } from "./actions";
 
 export interface Attempt { digits: number[]; exact: number; partial: number; error?: string }
 

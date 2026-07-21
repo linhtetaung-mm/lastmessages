@@ -39,7 +39,7 @@ export default function Home() {
       <section className="mt-20 max-w-3xl">
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-xl font-medium tracking-tight">Latest writing</h2>
-          <Link href="/blog" className="text-sm text-[var(--accent)]">
+          <Link href="/blog" className="text-sm hover:!text-[var(--accent)]">
             All posts →
           </Link>
         </div>

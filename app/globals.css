@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* globals.css */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(145, 215, 199, 0.25);
+  border-radius: 999px;
+}
+
 :root {
   --ink: #e9f0fb;
   --muted: #a9bdd8;
