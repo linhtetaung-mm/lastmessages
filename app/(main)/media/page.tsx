@@ -1,20 +1,11 @@
 import { PageHeading } from "@/components/page-heading";
 const playlists = [
   {
-    title: "Designing in public",
-    note: "Conversations about craft, tools, and making a life around the work.",
-    url: "https://www.youtube.com/results?search_query=designing+in+public",
+    title: "Heldom - Bergmál",
+    note: "Viking Music (This music is just playing while I am writing first post)",
+    url: "https://www.youtube.com/watch?v=ertsqtNBYmM",
   },
-  {
-    title: "Small systems",
-    note: "Thoughtful software, calm technology, and the joy of constraints.",
-    url: "https://www.youtube.com/results?search_query=small+software+systems",
-  },
-  {
-    title: "Late night listening",
-    note: "A gently evolving collection for focused, unhurried hours.",
-    url: "https://www.youtube.com/results?search_query=late+night+instrumental+music",
-  },
+  
 ];
 export default function MediaPage() {
   return (
