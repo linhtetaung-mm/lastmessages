@@ -85,6 +85,30 @@ a {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.prose th {
+  color: var(--ink);
+  background: rgba(145, 215, 199, 0.08);
+  font-weight: 600;
+  text-align: left;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+}
+
+.prose tr:hover {
+  background: rgba(145, 215, 199, 0.04);
+}
+
 @keyframes shake {
   0%,
   100% {
